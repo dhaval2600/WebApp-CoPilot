@@ -33,4 +33,9 @@ steps:
     inlineScript: |
       az login --service-principal --username $(servicePrincipalId) --password $(servicePrincipalKey) --tenant $(tenantId)
 
-
+- script: |
+    cd webapp.tf
+    terraform init
+    terraform plan -out=tfplan
+    terraform apply tfplan
+  displayName: 'Terraform Apply'
