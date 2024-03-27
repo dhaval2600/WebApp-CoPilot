@@ -23,15 +23,15 @@ steps:
     terraform --version
   displayName: 'Install Terraform'
 
-# Azure DevOps pipeline task to authenticate with Azure
-- task: AzureCLI@2
-  displayName: 'Azure Login'
-  inputs:
-    azureSubscription: 'client-ryan-llc (0e33eb45-3e46-4f1f-912e-ae9f6da6ab36)'
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: |
-      az login --service-principal --username $(servicePrincipalId) --password $(servicePrincipalKey) --tenant $(tenantId)
+# # Azure DevOps pipeline task to authenticate with Azure
+# - task: AzureCLI@2
+#   displayName: 'Azure Login'
+#   inputs:
+#     azureSubscription: 'client-ryan-llc (0e33eb45-3e46-4f1f-912e-ae9f6da6ab36)'
+#     scriptType: 'bash'
+#     scriptLocation: 'inlineScript'
+#     inlineScript: |
+#       az login --service-principal --username $(servicePrincipalId) --password $(servicePrincipalKey) --tenant $(tenantId)
 
 - script: |
     cd webapp.tf
