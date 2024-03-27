@@ -1,5 +1,6 @@
 provider "azurerm" {
   features {}
+  tenant_id = "0dce2fe3-47dd-44df-b0b7-a64fc7f09d88"
 }
 # create Terraform code for provisioning an Azure Web App
 resource "azurerm_app_service" "webapp" {
