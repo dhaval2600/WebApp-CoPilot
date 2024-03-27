@@ -1,7 +1,7 @@
 # create Terraform code for provisioning an Azure Web App
 resource "azurerm_app_service" "webapp" {
-    name                = "my-webapp"
-    location            = "West US"
+    name                = "co-pilot-test-webapp"
+    location            = "East US"
     resource_group_name = azurerm_resource_group.example.name
     app_service_plan_id = azurerm_app_service_plan.example.id
 
@@ -17,8 +17,8 @@ resource "azurerm_app_service" "webapp" {
 }
 
 resource "azurerm_app_service_plan" "example" {
-    name                = "my-app-service-plan"
-    location            = "West US"
+    name                = "co-pilot-test-webapp-service-plan"
+    location            = "East US"
     resource_group_name = azurerm_resource_group.example.name
     kind                = "Windows"
     reserved            = true
@@ -30,6 +30,8 @@ resource "azurerm_app_service_plan" "example" {
 }
 
 resource "azurerm_resource_group" "example" {
-    name     = "my-resource-group"
-    location = "West US"
+    name     = "rg-co-pilot-test"
+    location = "East US"
 }
+
+
