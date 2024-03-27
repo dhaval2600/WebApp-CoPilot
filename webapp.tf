@@ -1,3 +1,6 @@
+provider "azurerm" {
+  features {}
+}
 # create Terraform code for provisioning an Azure Web App
 resource "azurerm_app_service" "webapp" {
     name                = "co-pilot-test-webapp"

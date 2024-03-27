@@ -1,0 +1,19 @@
+# Azure DevOps pipeline task to install Terraform
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'
+    addToPath: true
+
+- script: |
+    curl -LO https://releases.hashicorp.com/terraform/1.0.0/terraform_1.0.0_linux_amd64.zip
+    unzip terraform_1.0.0_linux_amd64.zip
+    sudo mv terraform /usr/local/bin/
+    terraform --version
+  displayName: 'Install Terraform'
+
+- script: |
+    cd webapp.tf
+    terraform init
+    terraform plan -out=tfplan
+    terraform apply tfplan
+  displayName: 'Terraform Apply'
