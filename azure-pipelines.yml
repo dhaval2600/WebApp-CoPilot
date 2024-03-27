@@ -27,7 +27,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Azure Login'
   inputs:
-    azureSubscription: 'My Azure Subscription'
+    azureSubscription: 'client-ryan-llc'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
